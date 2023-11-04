@@ -59,7 +59,7 @@ public class StringsAndThings {
      * Return true if all the g's in the given string are happy.
      * example : gHappy("xxggxx") // Should return  true
      *           gHappy("xxgxx") // Should return  false
-     *           gHappy("xxggyygxx") // Should return  false
+     *           gHappy("xxggyygxx") // Should return false
      */
     public Boolean gIsHappy(String input){
         char[] chars = input.toCharArray();
@@ -68,9 +68,10 @@ public class StringsAndThings {
         for (int i = 0; i < chars.length - 1; i++) {
             if (chars[i] == 'g' && chars[i + 1] == 'g') {
                 happy = true;
-                i++;
-            } else if (chars[i] == 'g' && chars[i + 1] != 'g') {
-                happy = false;
+                break;
+
+           // } else if (chars[i] == 'g' && chars[i + 1] != 'g') {
+           //    happy = false;
             }
         }
         return happy;
